@@ -6,11 +6,11 @@
   "bin": {
     "kc-generate-gql-schema": "./_commonjs/index.js"
   },
-  "custom" : {
+  "custom": {
     "buildFolder": "_commonjs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -37,7 +37,10 @@
     "yargs": "^12.0.5"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.10",
     "@types/node": "^10.12.12",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
     "typescript": "^3.2.1"

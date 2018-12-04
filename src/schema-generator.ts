@@ -4,6 +4,9 @@ export class SchemaGenerator {
     private readonly deliveryClient: DeliveryClient;
 
     constructor(deliveryClient: DeliveryClient) {
+        if (!deliveryClient) {
+            throw Error('Provide DeliveryClient');
+        }
         this.deliveryClient = deliveryClient;
     }
 
