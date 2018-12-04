@@ -1,0 +1,45 @@
+{
+  "name": "kentico-cloud-graphql-schema-generator",
+  "version": "0.0.1",
+  "description": "GraphQL schema generator used to generate schema based on specified project.",
+  "main": "_commonjs/index.js",
+  "bin": {
+    "kc-generate-gql-schema": "./_commonjs/index.js"
+  },
+  "custom" : {
+    "buildFolder": "_commonjs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kentico/kentico-cloud-graphql-schema-generator.git"
+  },
+  "keywords": [
+    "graphql",
+    "generator",
+    "kentico",
+    "kentico-cloud",
+    "headless",
+    "cms"
+  ],
+  "author": "Ondřej Chrastina <ondrej.chrastina@gmail.com> (https://github.com/Simply007)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kentico/kentico-cloud-graphql-schema-generator/issues"
+  },
+  "homepage": "https://github.com/Kentico/kentico-cloud-graphql-schema-generator#readme",
+  "dependencies": {
+    "@types/yargs": "^12.0.1",
+    "kentico-cloud-delivery": "^5.2.1",
+    "rxjs": "^6.3.3",
+    "yargs": "^12.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.12",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^3.2.1"
+  }
+}
