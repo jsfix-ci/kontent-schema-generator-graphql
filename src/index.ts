@@ -22,6 +22,6 @@ const deliveryClient = new DeliveryClient({
 
 const generator = new SchemaGenerator(deliveryClient);
 
-generator.startSchemaGenerator().then(() => {
-  console.info('Generation finished');
+generator.getSchema().then((result) => {
+  console.info(result);
 });

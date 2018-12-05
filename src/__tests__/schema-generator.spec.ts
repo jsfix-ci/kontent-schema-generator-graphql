@@ -21,3 +21,17 @@ describe('Constructor ', () => {
     expect(generator).toBeTruthy();
   });
 });
+
+describe('getSchema', () => {
+  it('Return correct schema', async () => {
+    const generator = new SchemaGenerator(new DeliveryClient({
+      httpService: new FakeHttpService({
+        fakeResponseJson: fakeTypesComplex,
+        throwCloudError: false,
+      }),
+      projectId: 'testProjectId',
+    }));
+    const types = await generator.getSchema();
+    expect(types).toBeTruthy();
+  });
+});
