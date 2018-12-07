@@ -35,8 +35,8 @@ export class SchemaGenerator {
                     throw Error(`Unknown content type element ${contentElement.ty}`);
                 }
                 // TODO cover modular content (not a ModularContentField, but [ContentItem] + check assets + richtext)
-                const fieldName = GraphQLSchemaModel.elementTypeMapping.get(contentElement.type);
-                return `${contentElement.codename}: ${fieldName}`;
+                const fieldType = GraphQLSchemaModel.elementTypeMapping.get(contentElement.type);
+                return `${contentElement.codename}: ${fieldType}`;
             });
 
             const typename = this.snakeToPascal(contentType.system.codename) + 'ContentType';

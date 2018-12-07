@@ -9,7 +9,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${workspaceFolder}\\_commonjs\\index.js",
+      "program": "${workspaceFolder}/_commonjs/index.js",
       "outFiles": [
         "${workspaceFolder}/**/*.js"
       ]
@@ -18,7 +18,7 @@
       "type": "node",
       "request": "launch",
       "name": "Jest Tests",
-      "program": "${workspaceRoot}\\node_modules\\jest\\bin\\jest.js",
+      "program": "${workspaceRoot}/node_modules/jest/bin/jest.js",
       "args": [
         "-i"
       ],

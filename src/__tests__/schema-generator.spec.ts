@@ -1,3 +1,4 @@
+import * as fs from 'fs';
 import { DeliveryClient } from 'kentico-cloud-delivery';
 import { SchemaGenerator } from '../schema-generator';
 import { FakeHttpService } from '../test-files/fake-http-service';
@@ -32,6 +33,7 @@ describe('getSchema', () => {
       projectId: 'testProjectId',
     }));
     const types = await generator.getSchema();
-    expect(types).toBeTruthy();
+    const fakeTypesComplexOutput = fs.readFileSync('./src/__tests__/data/fakeTypesComplex.output.txt', 'utf8');
+    expect(types).toEqual(fakeTypesComplexOutput);
   });
 });

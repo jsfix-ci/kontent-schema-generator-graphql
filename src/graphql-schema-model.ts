@@ -12,8 +12,9 @@ export class GraphQLSchemaModel {
   public static urlSlugElementTypeName: string = 'UrlSlugElement';
   public static taxonomyElementTypeName: string = 'TaxonomyElement';
   public static assetElementTypeName: string = 'AssetElement';
-  public static linkedItemsElementTypeName: string = 'ModularContentElement';
   public static richTextElementTypeName: string = 'RichTextElement';
+
+  public static linkedItemsElement: string = '[ContentItem]';
 
   public static elementTypeMapping: Map<string, string> = new Map([
     [
@@ -46,7 +47,7 @@ export class GraphQLSchemaModel {
     ],
     [
       FieldType.ModularContent.toString(),
-      GraphQLSchemaModel.linkedItemsElementTypeName,
+      GraphQLSchemaModel.linkedItemsElement,
     ],
     [
       FieldType.RichText.toString(),
@@ -96,6 +97,15 @@ export class GraphQLSchemaModel {
   size: Int
   description: String
   url: String,
+}`,
+    ],
+    [
+      'link',
+      `type Link {
+  codename: String
+  itemID: String
+  urlSlug: String
+  type: String
 }`,
     ],
   ]);
@@ -165,21 +175,13 @@ export class GraphQLSchemaModel {
 }`,
     ],
     [
-      FieldType.ModularContent.toString(),
-      `type ${GraphQLSchemaModel.linkedItemsElementTypeName} {
-  type: String!
-  name: String!
-  value: [ContentItem]
-}`,
-    ],
-    [
       FieldType.RichText.toString(),
       `type ${GraphQLSchemaModel.richTextElementTypeName} {
   type: String!
   name: String!
   value: String
-  modular_content: [String]
-  links: [String]
+  linkedItemCodenames: [String]
+  links: [Link]
 }`,
     ],
   ]);
