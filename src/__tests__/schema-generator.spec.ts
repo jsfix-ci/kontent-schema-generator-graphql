@@ -1,8 +1,9 @@
 import * as fs from 'fs';
 import { DeliveryClient } from 'kentico-cloud-delivery';
 import { SchemaGenerator } from '../schema-generator';
-import { FakeHttpService } from '../test-files/fake-http-service';
+import * as fakeEmptyTypes from './data/fakeEmptyTypes.json';
 import * as fakeTypesComplex from './data/fakeTypesComplex.json';
+import { FakeHttpService } from './fake-http-service';
 
 describe('Constructor ', () => {
   it('Fail when provide undefined .', () => {
@@ -20,6 +21,21 @@ describe('Constructor ', () => {
       projectId: 'testProjectId',
     }));
     expect(generator).toBeTruthy();
+  });
+});
+
+describe('getSchema', () => {
+  it('Return correct fields for not types', async () => {
+    const generator = new SchemaGenerator(new DeliveryClient({
+      httpService: new FakeHttpService({
+        fakeResponseJson: fakeEmptyTypes,
+        throwCloudError: false,
+      }),
+      projectId: 'testProjectId',
+    }));
+    const types = await generator.getSchema();
+    const fakeTypesComplexOutput = fs.readFileSync('./src/__tests__/data/fakeEmptyTypes.output.txt', 'utf8');
+    expect(types).toEqual(fakeTypesComplexOutput);
   });
 });
 

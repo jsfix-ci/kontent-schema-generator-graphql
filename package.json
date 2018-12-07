@@ -10,7 +10,9 @@
     "buildFolder": "_commonjs"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "watch": "tsc -w",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

@@ -187,7 +187,8 @@ export class GraphQLSchemaModel {
   ]);
 
   /**
-   *
+   * Create all field definition including depending types.
+   * @returns {string[]}
    */
   public getFieldDefinitions(): string[] {
     return [GraphQLSchemaModel.systemType]
