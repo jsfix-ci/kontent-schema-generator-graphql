@@ -1,6 +1,6 @@
 import { ContentType, DeliveryClient, Element } from 'kentico-cloud-delivery';
-import { GraphQLSchemaModel } from './graphql-schema-model';
 import * as os from 'os';
+import { GraphQLSchemaModel } from './graphql-schema-model';
 
 export class SchemaGenerator {
     private readonly deliveryClient: DeliveryClient;
@@ -15,7 +15,7 @@ export class SchemaGenerator {
     public async getSchema(): Promise<string> {
         const schemaModel = new GraphQLSchemaModel();
         const fieldSchemas = schemaModel.getFieldDefinitions();
- 
+
         const contentTypes: ContentType[] = await this.loadContentTypes();
         const contentTypesSchemas = this.transformToSchemas(contentTypes);
 
@@ -29,11 +29,13 @@ export class SchemaGenerator {
                 if (!GraphQLSchemaModel.elementTypeMapping.get(contentElement.type)) {
                     throw Error(`Unknown content type element ${contentElement.type}`);
                 }
+
                 const fieldType = GraphQLSchemaModel.elementTypeMapping.get(contentElement.type);
                 return `${contentElement.codename}: ${fieldType}`;
             });
 
             const typename = this.snakeToPascal(contentType.system.codename) + 'ContentType';
+
             return `
 type ${typename} implements ${GraphQLSchemaModel.contentItemInterfaceName} {
   system: ${GraphQLSchemaModel.systemTypeName}!
