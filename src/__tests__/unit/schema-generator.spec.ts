@@ -3,7 +3,7 @@ import { DeliveryClient } from 'kentico-cloud-delivery';
 import { SchemaGenerator } from '../../schema-generator';
 import * as fakeEmptyTypes from '../data/fakeEmptyTypes.json';
 import * as fakeTypesComplex from '../data/fakeTypesComplex.json';
-import { FakeHttpService } from './fake-http-service';
+import { FakeHttpService } from '../fakes/fake-http-service';
 
 describe('Constructor ', () => {
   it('fail when provide undefined .', () => {

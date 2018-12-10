@@ -14,4 +14,9 @@ module.exports = {
     "json",
     "node"
   ],
+  "collectCoverageFrom": [
+    "**/*.{ts, tsx}",
+    "!**/node_modules/**",
+    "!**/__tests__/**"
+  ]
 }
