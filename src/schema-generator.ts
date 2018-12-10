@@ -3,6 +3,7 @@ import { GraphQLSchemaModel } from './graphql-schema-model';
 
 export class SchemaGenerator {
     private readonly deliveryClient: DeliveryClient;
+    private encapsulateToModule: boolean = false;
 
     constructor(deliveryClient: DeliveryClient) {
         if (!deliveryClient) {
@@ -18,7 +19,20 @@ export class SchemaGenerator {
         const contentTypes: ContentType[] = await this.loadContentTypes();
         const contentTypesSchemas = this.transformToSchemas(contentTypes);
 
-        return fieldSchemas.concat(contentTypesSchemas).join('\n');
+        let result = fieldSchemas.concat(contentTypesSchemas).join('\n');
+        if (this.encapsulateToModule) {
+            result = this.wrapByModule(result);
+        }
+        return result;
+    }
+
+    public createModule(value: boolean): SchemaGenerator {
+        this.encapsulateToModule = value;
+        return this;
+    }
+
+    private wrapByModule(input: string): string {
+        return `export const TYPE_DEFINITION = \`${input}\`;`;
     }
 
     private transformToSchemas(contentTypes: ContentType[]): string[] {
@@ -59,8 +73,8 @@ type ${typename} implements ${GraphQLSchemaModel.contentItemInterfaceName} {
 
     private snakeToPascal(input: string) {
         return input.split('_')
-        .map((str) => this.upperFirst(str))
-        .join('');
+            .map((str) => this.upperFirst(str))
+            .join('');
     }
 
     private upperFirst(input: string) {

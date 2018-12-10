@@ -6,13 +6,13 @@ import * as fakeTypesComplex from './data/fakeTypesComplex.json';
 import { FakeHttpService } from './fake-http-service';
 
 describe('Constructor ', () => {
-  it('Fail when provide undefined .', () => {
+  it('fail when provide undefined .', () => {
     expect(() => new SchemaGenerator(undefined as any)).toThrowError();
   });
-  it('Fail when provide null.', () => {
+  it('fail when provide null.', () => {
     expect(() => new SchemaGenerator(null as any)).toThrowError();
   });
-  it('Success with fake client', () => {
+  it('success with fake client', () => {
     const generator = new SchemaGenerator(new DeliveryClient({
       httpService: new FakeHttpService({
         fakeResponseJson: fakeTypesComplex,
@@ -25,7 +25,7 @@ describe('Constructor ', () => {
 });
 
 describe('getSchema', () => {
-  it('Return correct fields for not types', async () => {
+  it('return correct fields for not types', async () => {
     const generator = new SchemaGenerator(new DeliveryClient({
       httpService: new FakeHttpService({
         fakeResponseJson: fakeEmptyTypes,
@@ -34,13 +34,13 @@ describe('getSchema', () => {
       projectId: 'testProjectId',
     }));
     const types = await generator.getSchema();
-    const fakeTypesComplexOutput = fs.readFileSync('./src/__tests__/data/fakeEmptyTypes.output.txt', 'utf8');
-    expect(types).toEqual(fakeTypesComplexOutput);
+    const fakeEmptyTypesOutput = fs.readFileSync('./src/__tests__/data/fakeEmptyTypes.output.txt', 'utf8');
+    expect(types).toEqual(fakeEmptyTypesOutput);
   });
 });
 
 describe('getSchema', () => {
-  it('Return correct schema', async () => {
+  it('return correct schema', async () => {
     const generator = new SchemaGenerator(new DeliveryClient({
       httpService: new FakeHttpService({
         fakeResponseJson: fakeTypesComplex,
@@ -51,5 +51,24 @@ describe('getSchema', () => {
     const types = await generator.getSchema();
     const fakeTypesComplexOutput = fs.readFileSync('./src/__tests__/data/fakeTypesComplex.output.txt', 'utf8');
     expect(types).toEqual(fakeTypesComplexOutput);
+  });
+});
+
+describe('createModule', () => {
+  const fakeEmptyTypesOutput = fs.readFileSync('./src/__tests__/data/fakeEmptyTypes.output.txt', 'utf8');
+  const generator = new SchemaGenerator(new DeliveryClient({
+    httpService: new FakeHttpService({
+      fakeResponseJson: fakeEmptyTypes,
+      throwCloudError: false,
+    }),
+    projectId: 'testProjectId',
+  }));
+
+  it('is used when is set', async () => {
+    const expectedOutput = `export const TYPE_DEFINITION = \`${fakeEmptyTypesOutput}\`;`;
+    generator.createModule(true);
+
+    const output = await generator.getSchema();
+    expect(output).toEqual(expectedOutput);
   });
 });
