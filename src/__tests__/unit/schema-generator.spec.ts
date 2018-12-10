@@ -1,8 +1,8 @@
 import * as fs from 'fs';
 import { DeliveryClient } from 'kentico-cloud-delivery';
-import { SchemaGenerator } from '../schema-generator';
-import * as fakeEmptyTypes from './data/fakeEmptyTypes.json';
-import * as fakeTypesComplex from './data/fakeTypesComplex.json';
+import { SchemaGenerator } from '../../schema-generator';
+import * as fakeEmptyTypes from '../data/fakeEmptyTypes.json';
+import * as fakeTypesComplex from '../data/fakeTypesComplex.json';
 import { FakeHttpService } from './fake-http-service';
 
 describe('Constructor ', () => {
@@ -25,7 +25,7 @@ describe('Constructor ', () => {
 });
 
 describe('getSchema', () => {
-  it('return correct fields for not types', async () => {
+  it('return correct fields for no types', async () => {
     const generator = new SchemaGenerator(new DeliveryClient({
       httpService: new FakeHttpService({
         fakeResponseJson: fakeEmptyTypes,

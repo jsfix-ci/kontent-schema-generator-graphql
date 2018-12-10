@@ -1,4 +1,4 @@
-import { GraphQLSchemaModel } from '../graphql-schema-model';
+import { GraphQLSchemaModel } from '../../graphql-schema-model';
 
 describe('getFieldDefinitions ', () => {
   it('Return correct number of items', () => {
