@@ -1,5 +1,4 @@
 import { ContentType, DeliveryClient, Element } from 'kentico-cloud-delivery';
-import * as os from 'os';
 import { GraphQLSchemaModel } from './graphql-schema-model';
 
 export class SchemaGenerator {
@@ -39,7 +38,7 @@ export class SchemaGenerator {
             return `
 type ${typename} implements ${GraphQLSchemaModel.contentItemInterfaceName} {
   system: ${GraphQLSchemaModel.systemTypeName}!
-  ${elements.join(os.EOL + '  ')}
+  ${elements.join('\n' + '  ')}
 }`;
         });
     }

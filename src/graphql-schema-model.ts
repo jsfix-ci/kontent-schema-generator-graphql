@@ -96,7 +96,7 @@ export class GraphQLSchemaModel {
   type: String
   size: Int
   description: String
-  url: String,
+  url: String
 }`,
     ],
     [

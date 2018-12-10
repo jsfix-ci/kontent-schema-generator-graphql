@@ -22,7 +22,7 @@ type Asset {
   type: String
   size: Int
   description: String
-  url: String,
+  url: String
 }
 type Link {
   codename: String
