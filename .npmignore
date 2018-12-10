@@ -1,10 +1,13 @@
 # Ignore everything
-*
+/*
 
 # But descend into directories
 
 # Recursively allow files under subtree
-!._commonjs
-!package.json
-!.npmignore
-!README.md
+!/_commonjs
+/_commonjs/__tests__
+
+!/package.json
+!/.npmignore
+!/README.md
+!/LICENSE

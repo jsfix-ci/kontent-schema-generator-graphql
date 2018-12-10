@@ -1,4 +1,4 @@
 # npm packages
 /node_modules
 # build output
-_commonjs
+/_commonjs
