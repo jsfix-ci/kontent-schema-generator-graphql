@@ -1,4 +1,8 @@
 # Kentico GraphQl schema generator
+[![Build Status](https://api.travis-ci.org/Kentico/kentico-cloud-graphql-schema-generator.svg?branch=master)](https://travis-ci.org/Kentico/kentico-cloud-graphql-schema-generator)
+[![npm version](https://badge.fury.io/js/kentico-cloud-graphql-schema-generator.svg)](https://www.npmjs.com/package/kentico-cloud-graphql-schema-generator)
+[![npm](https://img.shields.io/npm/dt/kentico-cloud-graphql-schema-generator.svg)](https://www.npmjs.com/package/kentico-cloud-graphql-schema-generator)
+
 [GraphQL schema](https://graphql.org/learn/schema/) generator used to generate schema based on specified project.
 
 This schema could be used when creating [GraphQl](https://graphql.org) endpoint from [Kentico Cloud Delivery API REST endpoint](https://developer.kenticocloud.com/reference#delivery-api).
