@@ -65,7 +65,11 @@ describe('createModule', () => {
   }));
 
   it('is used when is set', async () => {
-    const expectedOutput = `export const TYPE_DEFINITION = \`${fakeEmptyTypesOutput}\`;`;
+    const expectedOutput = `const TYPE_DEFINITION = \`${fakeEmptyTypesOutput}\`;
+
+module.exports = {
+  TYPE_DEFINITION
+}`;
     generator.createModule(true);
 
     const output = await generator.getSchema();

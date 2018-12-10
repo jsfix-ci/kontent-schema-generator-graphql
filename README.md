@@ -163,7 +163,7 @@ type AboutUsContentType implements ContentItem {
 <summary>With module encapsulation</summary>
 
 ```
-export const TYPE_DEFINITION = `type SystemInfo {
+const TYPE_DEFINITION = `type SystemInfo {
   id: String!
   name: String!
   codename: String!
@@ -261,6 +261,9 @@ type AboutUsContentType implements ContentItem {
   facts: [ContentItem]
 }`;
 
+module.exports = {
+  TYPE_DEFINITION
+}
 ```
 
 </details>

@@ -32,7 +32,11 @@ export class SchemaGenerator {
     }
 
     private wrapByModule(input: string): string {
-        return `export const TYPE_DEFINITION = \`${input}\`;`;
+        return `const TYPE_DEFINITION = \`${input}\`;
+
+module.exports = {
+  TYPE_DEFINITION
+}`;
     }
 
     private transformToSchemas(contentTypes: ContentType[]): string[] {
