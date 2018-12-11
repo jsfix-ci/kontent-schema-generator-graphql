@@ -5,7 +5,7 @@
 
 [GraphQL schema](https://graphql.org/learn/schema/) generator used to generate schema based on specified project.
 
-This schema could be used when creating [GraphQl](https://graphql.org) endpoint from [Kentico Cloud Delivery API REST endpoint](https://developer.kenticocloud.com/reference#delivery-api).
+This schema could be used when creating [GraphQL](https://graphql.org) endpoint from [Kentico Cloud Delivery API REST endpoint](https://developer.kenticocloud.com/reference#delivery-api).
 
 # Get started
 
