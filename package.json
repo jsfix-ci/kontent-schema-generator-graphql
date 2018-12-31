@@ -27,7 +27,7 @@
     "headless",
     "cms"
   ],
-  "author": "Ondřej Chrastina <ondrej.chrastina@gmail.com> (https://github.com/Simply007)",
+  "author": "Ondřej Chrastina <ondrej.chrastina@kentico.com> (https://github.com/Simply007)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Kentico/kentico-cloud-graphql-schema-generator/issues"
