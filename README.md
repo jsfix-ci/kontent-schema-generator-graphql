@@ -7,6 +7,9 @@
 
 This schema could be used when creating [GraphQL](https://graphql.org) endpoint from [Kentico Cloud Delivery API REST endpoint](https://developer.kenticocloud.com/reference#delivery-api).
 
+This schema is primarily meant to be used in combination with the [Official JavaScript SDK](https://github.com/Kentico/kentico-cloud-js/tree/master/packages/delivery) on the top of the Kentico Cloud REST API. If you are using REST API directly, you won't get all elements' properties set, because some of them are set by the JS SDK.
+
+
 # Get started
 
 ## Prerequisites
