@@ -170,7 +170,7 @@ export class GraphQLSchemaModel {
       `type ${GraphQLSchemaModel.assetElementTypeName} {
   type: String!
   name: String!
-  value: String
+  value: [Asset]
   assets: [Asset]
 }`,
     ],
