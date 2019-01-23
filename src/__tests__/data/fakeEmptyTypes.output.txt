@@ -69,7 +69,7 @@ type TaxonomyElement {
 type AssetElement {
   type: String!
   name: String!
-  value: String
+  value: [Asset]
   assets: [Asset]
 }
 type RichTextElement {
