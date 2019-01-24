@@ -7,6 +7,8 @@
 
 This schema could be used when creating [GraphQL](https://graphql.org) endpoint from [Kentico Cloud Delivery API REST endpoint](https://developer.kenticocloud.com/reference#delivery-api).
 
+**Showcase** could be see on [apollo express boilerplate](https://github.com/Kentico/cloud-boilerplate-express-apollo).
+
 # Get started
 
 ## Prerequisites
