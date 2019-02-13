@@ -23,7 +23,7 @@ This schema is primarily meant to be used in combination with the [Official Java
 
 Provide a [project ID](https://developer.kenticocloud.com/v1/reference) of your project. 
 
-Write  type definition to the snadard output
+Write  type definition to the standard output
 * `kc-generate-gql-schema --projectId xxx`
 
 Generate file with definition exported as a constant fo file `config.js`
@@ -41,7 +41,7 @@ Generate file with definition exported as a constant fo file `config.js`
 # Development
 
 1. Clone the repository
-2. Run `npm install` to intall all rewuired dependencies
+2. Run `npm install` to install all required dependencies
 3. Run `npm run build` to build the solution
 
 
