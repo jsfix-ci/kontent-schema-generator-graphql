@@ -160,7 +160,7 @@ export class GraphQLSchemaModel {
       `type ${GraphQLSchemaModel.taxonomyElementTypeName} {
   type: String!
   name: String!
-  value: [String]
+  value: [TaxonomyTerm]
   taxonomyGroup: String
   taxonomyTerms: [TaxonomyTerm]
 }`,
