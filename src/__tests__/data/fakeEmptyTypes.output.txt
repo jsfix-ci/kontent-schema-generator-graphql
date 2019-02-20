@@ -62,7 +62,7 @@ type UrlSlugElement {
 type TaxonomyElement {
   type: String!
   name: String!
-  value: String
+  value: [String]
   taxonomyGroup: String
   taxonomyTerms: [TaxonomyTerm]
 }
