@@ -4,6 +4,7 @@
 [![npm](https://img.shields.io/npm/dt/kentico-cloud-graphql-schema-generator.svg)](https://www.npmjs.com/package/kentico-cloud-graphql-schema-generator)
 [![Maintainability](https://api.codeclimate.com/v1/badges/0f6d187a729e061ab12f/maintainability)](https://codeclimate.com/github/Kentico/kentico-cloud-graphql-schema-generator/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/0f6d187a729e061ab12f/test_coverage)](https://codeclimate.com/github/Kentico/kentico-cloud-graphql-schema-generator/test_coverage)
+[![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-cloud)
 
 [GraphQL schema](https://graphql.org/learn/schema/) generator used to generate schema based on specified project.
 
