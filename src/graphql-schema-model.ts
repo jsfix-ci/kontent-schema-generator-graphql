@@ -115,7 +115,7 @@ export class GraphQLSchemaModel {
     ],
   ]);
 
-  public static ElementTypes: Map<string, string> = new Map([
+  public static elementTypes: Map<string, string> = new Map([
     [
       ElementType.Text.toString(),
       `type ${GraphQLSchemaModel.textElementTypeName} {
@@ -207,7 +207,7 @@ export class GraphQLSchemaModel {
     return [GraphQLSchemaModel.systemType]
       .concat(Array.from(GraphQLSchemaModel.interfaces.values()))
       .concat(Array.from(GraphQLSchemaModel.helperTypes.values()))
-      .concat(Array.from(GraphQLSchemaModel.ElementTypes.values()));
+      .concat(Array.from(GraphQLSchemaModel.elementTypes.values()));
   }
 
 }
