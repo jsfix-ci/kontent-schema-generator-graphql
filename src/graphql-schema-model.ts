@@ -1,4 +1,4 @@
-import { FieldType } from 'kentico-cloud-delivery';
+import { ElementType } from 'kentico-cloud-delivery';
 
 export class GraphQLSchemaModel {
 
@@ -13,45 +13,50 @@ export class GraphQLSchemaModel {
   public static taxonomyElementTypeName: string = 'TaxonomyElement';
   public static assetElementTypeName: string = 'AssetElement';
   public static richTextElementTypeName: string = 'RichTextElement';
+  public static customElementTypeName: string = 'CustomElement';
 
   public static linkedItemsElement: string = '[ContentItem]';
 
   public static elementTypeMapping: Map<string, string> = new Map([
     [
-      FieldType.Text.toString(),
+      ElementType.Text.toString(),
       GraphQLSchemaModel.textElementTypeName,
     ],
     [
-      FieldType.Number.toString(),
+      ElementType.Number.toString(),
       GraphQLSchemaModel.numberElementTypeName,
     ],
     [
-      FieldType.DateTime.toString(),
+      ElementType.DateTime.toString(),
       GraphQLSchemaModel.dateTimeElementTypeName,
     ],
     [
-      FieldType.MultipleChoice.toString(),
+      ElementType.MultipleChoice.toString(),
       GraphQLSchemaModel.multipleChoiceElementTypeName,
     ],
     [
-      FieldType.UrlSlug.toString(),
+      ElementType.UrlSlug.toString(),
       GraphQLSchemaModel.urlSlugElementTypeName,
     ],
     [
-      FieldType.Taxonomy.toString(),
+      ElementType.Taxonomy.toString(),
       GraphQLSchemaModel.taxonomyElementTypeName,
     ],
     [
-      FieldType.Asset.toString(),
+      ElementType.Asset.toString(),
       GraphQLSchemaModel.assetElementTypeName,
     ],
     [
-      FieldType.ModularContent.toString(),
+      ElementType.ModularContent.toString(),
       GraphQLSchemaModel.linkedItemsElement,
     ],
     [
-      FieldType.RichText.toString(),
+      ElementType.RichText.toString(),
       GraphQLSchemaModel.richTextElementTypeName,
+    ],
+    [
+      ElementType.Custom.toString(),
+      GraphQLSchemaModel.customElementTypeName,
     ],
   ]);
 
@@ -110,9 +115,9 @@ export class GraphQLSchemaModel {
     ],
   ]);
 
-  public static fieldTypes: Map<string, string> = new Map([
+  public static ElementTypes: Map<string, string> = new Map([
     [
-      FieldType.Text.toString(),
+      ElementType.Text.toString(),
       `type ${GraphQLSchemaModel.textElementTypeName} {
   type: String!
   name: String!
@@ -120,7 +125,7 @@ export class GraphQLSchemaModel {
 }`,
     ],
     [
-      FieldType.Number.toString(),
+      ElementType.Number.toString(),
       `type ${GraphQLSchemaModel.numberElementTypeName} {
   type: String!
   name: String!
@@ -129,7 +134,7 @@ export class GraphQLSchemaModel {
 }`,
     ],
     [
-      FieldType.DateTime.toString(),
+      ElementType.DateTime.toString(),
       `type ${GraphQLSchemaModel.dateTimeElementTypeName} {
   type: String!
   name: String!
@@ -138,7 +143,7 @@ export class GraphQLSchemaModel {
 }`,
     ],
     [
-      FieldType.MultipleChoice.toString(),
+      ElementType.MultipleChoice.toString(),
       `type ${GraphQLSchemaModel.multipleChoiceElementTypeName} {
   type: String!
   name: String!
@@ -147,7 +152,7 @@ export class GraphQLSchemaModel {
 }`,
     ],
     [
-      FieldType.UrlSlug.toString(),
+      ElementType.UrlSlug.toString(),
       `type ${GraphQLSchemaModel.urlSlugElementTypeName} {
   type: String!
   name: String!
@@ -156,7 +161,7 @@ export class GraphQLSchemaModel {
 }`,
     ],
     [
-      FieldType.Taxonomy.toString(),
+      ElementType.Taxonomy.toString(),
       `type ${GraphQLSchemaModel.taxonomyElementTypeName} {
   type: String!
   name: String!
@@ -166,7 +171,7 @@ export class GraphQLSchemaModel {
 }`,
     ],
     [
-      FieldType.Asset.toString(),
+      ElementType.Asset.toString(),
       `type ${GraphQLSchemaModel.assetElementTypeName} {
   type: String!
   name: String!
@@ -175,13 +180,21 @@ export class GraphQLSchemaModel {
 }`,
     ],
     [
-      FieldType.RichText.toString(),
+      ElementType.RichText.toString(),
       `type ${GraphQLSchemaModel.richTextElementTypeName} {
   type: String!
   name: String!
   value: String
   linkedItemCodenames: [String]
   links: [Link]
+}`,
+    ],
+    [
+      ElementType.Custom.toString(),
+      `type ${GraphQLSchemaModel.customElementTypeName} {
+  type: String!
+  name: String!
+  value: String
 }`,
     ],
   ]);
@@ -194,7 +207,7 @@ export class GraphQLSchemaModel {
     return [GraphQLSchemaModel.systemType]
       .concat(Array.from(GraphQLSchemaModel.interfaces.values()))
       .concat(Array.from(GraphQLSchemaModel.helperTypes.values()))
-      .concat(Array.from(GraphQLSchemaModel.fieldTypes.values()));
+      .concat(Array.from(GraphQLSchemaModel.ElementTypes.values()));
   }
 
 }

@@ -1,4 +1,7 @@
-type SystemInfo {
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getSchema return correct schema from shared project 1`] = `
+"type SystemInfo {
   id: String!
   name: String!
   codename: String!
@@ -123,7 +126,6 @@ type AccessoryContentType implements ContentItem {
   product_status: TaxonomyElement
   image: AssetElement
   product_name: TextElement
-  content: CustomElement
 }
 
 type ArticleContentType implements ContentItem {
@@ -298,4 +300,5 @@ type TweetContentType implements ContentItem {
   tweet_link: TextElement
   theme: MultipleChoiceElement
   display_options: MultipleChoiceElement
-}
+}"
+`;

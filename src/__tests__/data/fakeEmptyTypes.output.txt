@@ -79,3 +79,8 @@ type RichTextElement {
   linkedItemCodenames: [String]
   links: [Link]
 }
+type CustomElement {
+  type: String!
+  name: String!
+  value: String
+}

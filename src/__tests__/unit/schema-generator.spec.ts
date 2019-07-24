@@ -26,11 +26,13 @@ describe('Constructor ', () => {
 
 describe('getSchema', () => {
   it('return correct fields for no types', async () => {
+    const testHttpService = new TestHttpService({
+      fakeResponseJson: fakeEmptyTypes,
+      throwCloudError: false,
+    });
+    testHttpService.retryPromise = (promise) => promise;
     const generator = new SchemaGenerator(new DeliveryClient({
-      httpService: new TestHttpService({
-        fakeResponseJson: fakeEmptyTypes,
-        throwCloudError: false,
-      }),
+      httpService: testHttpService,
       projectId: 'testProjectId',
     }));
     const types = await generator.getSchema();
@@ -41,11 +43,13 @@ describe('getSchema', () => {
 
 describe('getSchema', () => {
   it('return correct schema', async () => {
+    const testHttpService = new TestHttpService({
+      fakeResponseJson: fakeTypesComplex,
+      throwCloudError: false,
+    });
+    testHttpService.retryPromise = (promise) => promise;
     const generator = new SchemaGenerator(new DeliveryClient({
-      httpService: new TestHttpService({
-        fakeResponseJson: fakeTypesComplex,
-        throwCloudError: false,
-      }),
+      httpService: testHttpService,
       projectId: 'testProjectId',
     }));
     const types = await generator.getSchema();
@@ -56,11 +60,13 @@ describe('getSchema', () => {
 
 describe('createModule', () => {
   const fakeEmptyTypesOutput = fs.readFileSync('./src/__tests__/data/fakeEmptyTypes.output.txt', 'utf8');
+  const testHttpService = new TestHttpService({
+    fakeResponseJson: fakeEmptyTypes,
+    throwCloudError: false,
+  });
+  testHttpService.retryPromise = (promise) => promise;
   const generator = new SchemaGenerator(new DeliveryClient({
-    httpService: new TestHttpService({
-      fakeResponseJson: fakeEmptyTypes,
-      throwCloudError: false,
-    }),
+    httpService: testHttpService,
     projectId: 'testProjectId',
   }));
 

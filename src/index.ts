@@ -15,9 +15,11 @@ if (!projectId) {
 }
 
 const deliveryClient = new DeliveryClient({
-  enableSecuredMode: secureAccessKey ? true : false,
   projectId,
-  securedApiKey: secureAccessKey,
+  secureMode: {
+    isEnabledGlobally: secureAccessKey ? true : false,
+    secureApiKey: secureAccessKey,
+  },
 });
 
 const generator = new SchemaGenerator(deliveryClient);
