@@ -1,4 +1,4 @@
-import { ContentType, DeliveryClient} from 'kentico-cloud-delivery';
+import { ContentType, DeliveryClient, GenericElement} from 'kentico-cloud-delivery';
 import { GraphQLSchemaModel } from './graphql-schema-model';
 
 export class SchemaGenerator {
@@ -42,7 +42,7 @@ module.exports = {
     private transformToSchemas(contentTypes: ContentType[]): string[] {
         return contentTypes.map((contentType: ContentType) => {
 
-            const elements = contentType.elements.map((contentElement) => {
+            const elements = contentType.elements.map((contentElement: GenericElement) => {
                 if (!GraphQLSchemaModel.elementTypeMapping.get(contentElement.type)) {
                     throw Error(`Unknown content type element ${contentElement.type}`);
                 }
