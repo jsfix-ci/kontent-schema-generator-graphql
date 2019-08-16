@@ -43,6 +43,12 @@ Generate file with definition exported as a constant fo file `config.js`
 * `outputFile` - specifies output file name (possible with the path), if not specified - output is written to standard output
 * `createModule` - output is defined as a constant and exported as a module (see [Example Output](#example-output))
 
+## Version
+
+Version 1.X.X is compatible with npm package [`kentico-cloud-delivery`](https://www.npmjs.com/package/kentico-cloud-delivery) version 5.X.X.
+
+Version 2.X.X is compatible with npm package [`kentico-cloud-delivery`](https://www.npmjs.com/package/kentico-cloud-delivery) version 6.X.X.
+
 ## Development
 
 1. Clone the repository

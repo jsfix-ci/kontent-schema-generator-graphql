@@ -1,6 +1,6 @@
 {
   "name": "kentico-cloud-graphql-schema-generator",
-  "version": "1.1.0-beta1",
+  "version": "2.0.0-beta1",
   "description": "GraphQL schema generator used to generate schema based on specified project.",
   "main": "_commonjs/index.js",
   "bin": {
