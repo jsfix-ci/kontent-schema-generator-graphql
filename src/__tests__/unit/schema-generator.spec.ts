@@ -35,7 +35,7 @@ describe('getSchema', () => {
       projectId: 'testProjectId',
     }));
     const types = await generator.getSchema();
-    const fakeEmptyTypesOutput = fs.readFileSync('./src/__tests__/data/fakeEmptyTypes.output.txt', 'utf8');
+    const fakeEmptyTypesOutput = fs.readFileSync('./src/__tests__/data/fakeEmptyTypes.output.gql', 'utf8');
     expect(types).toEqual(fakeEmptyTypesOutput);
   });
 });
@@ -51,13 +51,13 @@ describe('getSchema', () => {
       projectId: 'testProjectId',
     }));
     const types = await generator.getSchema();
-    const fakeTypesComplexOutput = fs.readFileSync('./src/__tests__/data/fakeTypesComplex.output.txt', 'utf8');
+    const fakeTypesComplexOutput = fs.readFileSync('./src/__tests__/data/fakeTypesComplex.output.gql', 'utf8');
     expect(types).toEqual(fakeTypesComplexOutput);
   });
 });
 
 describe('createModule', () => {
-  const fakeEmptyTypesOutput = fs.readFileSync('./src/__tests__/data/fakeEmptyTypes.output.txt', 'utf8');
+  const fakeEmptyTypesOutput = fs.readFileSync('./src/__tests__/data/fakeEmptyTypes.output.gql', 'utf8');
   const testHttpService = new TestHttpService({
     fakeResponseJson: fakeEmptyTypes,
     throwCloudError: false,

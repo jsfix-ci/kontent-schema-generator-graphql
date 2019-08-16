@@ -102,6 +102,8 @@ export class GraphQLSchemaModel {
   size: Int
   description: String
   url: String
+  width: Int
+  height: Int
 }`,
     ],
     [
@@ -111,6 +113,16 @@ export class GraphQLSchemaModel {
   itemID: String
   urlSlug: String
   type: String
+}`,
+    ],
+    [
+      'richtext_image',
+      `type RichTextImage {
+  imageId: String!
+  url: String!
+  description: String
+  width: Int
+  height: Int
 }`,
     ],
   ]);
@@ -129,8 +141,7 @@ export class GraphQLSchemaModel {
       `type ${GraphQLSchemaModel.numberElementTypeName} {
   type: String!
   name: String!
-  value: String
-  number: Int
+  value: Int
 }`,
     ],
     [
@@ -139,7 +150,6 @@ export class GraphQLSchemaModel {
   type: String!
   name: String!
   value: String
-  datetime: String
 }`,
     ],
     [
@@ -147,8 +157,7 @@ export class GraphQLSchemaModel {
       `type ${GraphQLSchemaModel.multipleChoiceElementTypeName} {
   type: String!
   name: String!
-  value: String
-  options: [MultipleChoiceElementOption]
+  value: [MultipleChoiceElementOption]
 }`,
     ],
     [
@@ -157,7 +166,6 @@ export class GraphQLSchemaModel {
   type: String!
   name: String!
   value: String
-  data: String
 }`,
     ],
     [
@@ -167,7 +175,6 @@ export class GraphQLSchemaModel {
   name: String!
   value: [TaxonomyTerm]
   taxonomyGroup: String
-  taxonomyTerms: [TaxonomyTerm]
 }`,
     ],
     [
@@ -176,7 +183,6 @@ export class GraphQLSchemaModel {
   type: String!
   name: String!
   value: [Asset]
-  assets: [Asset]
 }`,
     ],
     [
@@ -187,6 +193,8 @@ export class GraphQLSchemaModel {
   value: String
   linkedItemCodenames: [String]
   links: [Link]
+  images: [RichTextImage]
+  resolvedHtml: String
 }`,
     ],
     [

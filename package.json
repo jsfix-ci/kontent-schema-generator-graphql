@@ -14,7 +14,8 @@
     "test:coverage": "jest --coverage",
     "coverage": "jest --config jest.coverage.config.js ",
     "watch": "tsc -w",
-    "build": "tsc"
+    "build": "tsc",
+    "run:sample": "ts-node ./src/index.ts --projectId 975bf280-fd91-488c-994c-2f04416e5ee3 --createModule"
   },
   "repository": {
     "type": "git",

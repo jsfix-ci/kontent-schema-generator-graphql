@@ -14,56 +14,63 @@ This schema is primarily meant to be used in combination with the [Official Java
 
 **Showcase** could be see on [apollo express boilerplate](https://github.com/Kentico/cloud-boilerplate-express-apollo).
 
-# Get started
+## Get started
 
-## Prerequisites
+### Prerequisites
+
 * [Node](https://nodejs.org/en/download/) installed
 
-## Installation
+### Installation
+
 `npm i kentico-cloud-graphql-schema-generator -g`
 
-## Generating schema with NPM script
+### Generating schema with NPM script
 
-Provide a [project ID](https://developer.kenticocloud.com/v1/reference) of your project. 
+Provide a [project ID](https://developer.kenticocloud.com/v1/reference) of your project.
 
 Write  type definition to the standard output
+
 * `kc-generate-gql-schema --projectId xxx`
 
 Generate file with definition exported as a constant fo file `config.js`
+
 * `kc-generate-gql-schema --projectId xxx --createModule --outputFile "config.js"`
 
-
-## Configuration
+### Configuration
 
 * `projectId` - represents the Kentico Cloud Project Id from which schema will be generated
 * `secureAccessKey` - Secure access key required to authenticate requests with enabled secure access in Kentico Cloud project
 * `outputFile` - specifies output file name (possible with the path), if not specified - output is written to standard output
 * `createModule` - output is defined as a constant and exported as a module (see [Example Output](#example-output))
 
-
-# Development
+## Development
 
 1. Clone the repository
 2. Run `npm install` to install all required dependencies
 3. Run `npm run build` to build the solution
 
-
-## Run
+### Run
 
 Run `node ./_commonjs/index.js --projectId xxx`
 
-## Test
+### Test
+
 * Run `npm test` to run all tests
 
-## Run watch mode
+### Run watch mode
+
 * Run `npm run watch` to run the watch mode
 
-# Example output
+## Example output
+
+* More complex showcase could be also retrieved by running
+
+`npm run run:sample`
 
 <details>
 <summary>Without module encapsulation (w/o `createModule`)</summary>
 
-```
+```plain
 type SystemInfo {
   id: String!
   name: String!
@@ -88,13 +95,22 @@ type Asset {
   type: String
   size: Int
   description: String
-  url: String,
+  url: String
+  width: Int
+  height: Int
 }
 type Link {
   codename: String
   itemID: String
   urlSlug: String
   type: String
+}
+type RichTextImage {
+  imageId: String!
+  url: String!
+  description: String
+  width: Int
+  height: Int
 }
 type TextElement {
   type: String!
@@ -104,39 +120,33 @@ type TextElement {
 type NumberElement {
   type: String!
   name: String!
-  value: String
-  number: Int
+  value: Int
 }
 type DateTimeElement {
   type: String!
   name: String!
   value: String
-  datetime: String
 }
 type MultipleChoiceElement {
   type: String!
   name: String!
-  value: String
-  options: [MultipleChoiceElementOption]
+  value: [MultipleChoiceElementOption]
 }
 type UrlSlugElement {
   type: String!
   name: String!
   value: String
-  data: String
 }
 type TaxonomyElement {
   type: String!
   name: String!
-  value: String
+  value: [TaxonomyTerm]
   taxonomyGroup: String
-  taxonomyTerms: [TaxonomyTerm]
 }
 type AssetElement {
   type: String!
   name: String!
-  value: String
-  assets: [Asset]
+  value: [Asset]
 }
 type RichTextElement {
   type: String!
@@ -144,6 +154,13 @@ type RichTextElement {
   value: String
   linkedItemCodenames: [String]
   links: [Link]
+  images: [RichTextImage]
+  resolvedHtml: String
+}
+type CustomElement {
+  type: String!
+  name: String!
+  value: String
 }
 
 type AboutUsContentType implements ContentItem {
@@ -169,7 +186,7 @@ type AboutUsContentType implements ContentItem {
 <details>
 <summary>With module encapsulation</summary>
 
-```
+```plain
 const TYPE_DEFINITION = `type SystemInfo {
   id: String!
   name: String!
@@ -194,13 +211,22 @@ type Asset {
   type: String
   size: Int
   description: String
-  url: String,
+  url: String
+  width: Int
+  height: Int
 }
 type Link {
   codename: String
   itemID: String
   urlSlug: String
   type: String
+}
+type RichTextImage {
+  imageId: String!
+  url: String!
+  description: String
+  width: Int
+  height: Int
 }
 type TextElement {
   type: String!
@@ -210,39 +236,33 @@ type TextElement {
 type NumberElement {
   type: String!
   name: String!
-  value: String
-  number: Int
+  value: Int
 }
 type DateTimeElement {
   type: String!
   name: String!
   value: String
-  datetime: String
 }
 type MultipleChoiceElement {
   type: String!
   name: String!
-  value: String
-  options: [MultipleChoiceElementOption]
+  value: [MultipleChoiceElementOption]
 }
 type UrlSlugElement {
   type: String!
   name: String!
   value: String
-  data: String
 }
 type TaxonomyElement {
   type: String!
   name: String!
-  value: String
+  value: [TaxonomyTerm]
   taxonomyGroup: String
-  taxonomyTerms: [TaxonomyTerm]
 }
 type AssetElement {
   type: String!
   name: String!
-  value: String
-  assets: [Asset]
+  value: [Asset]
 }
 type RichTextElement {
   type: String!
@@ -250,6 +270,13 @@ type RichTextElement {
   value: String
   linkedItemCodenames: [String]
   links: [Link]
+  images: [RichTextImage]
+  resolvedHtml: String
+}
+type CustomElement {
+  type: String!
+  name: String!
+  value: String
 }
 
 type AboutUsContentType implements ContentItem {
