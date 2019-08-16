@@ -2,6 +2,7 @@
 import * as fs from 'fs';
 import { DeliveryClient } from 'kentico-cloud-delivery';
 import * as yargs from 'yargs';
+import * as config from '../config.json';
 import { SchemaGenerator } from './schema-generator';
 
 const argv = yargs.argv;
@@ -16,6 +17,9 @@ if (!projectId) {
 
 const deliveryClient = new DeliveryClient({
   globalQueryConfig: {
+    customHeaders: [
+      config.trackingHeader,
+    ],
     useSecuredMode: secureAccessKey ? true : false,
   },
   projectId,
