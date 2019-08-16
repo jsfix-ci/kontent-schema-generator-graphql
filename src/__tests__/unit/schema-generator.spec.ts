@@ -30,7 +30,6 @@ describe('getSchema', () => {
       fakeResponseJson: fakeEmptyTypes,
       throwCloudError: false,
     });
-    testHttpService.retryPromise = (promise) => promise;
     const generator = new SchemaGenerator(new DeliveryClient({
       httpService: testHttpService,
       projectId: 'testProjectId',
@@ -47,7 +46,6 @@ describe('getSchema', () => {
       fakeResponseJson: fakeTypesComplex,
       throwCloudError: false,
     });
-    testHttpService.retryPromise = (promise) => promise;
     const generator = new SchemaGenerator(new DeliveryClient({
       httpService: testHttpService,
       projectId: 'testProjectId',
@@ -64,7 +62,6 @@ describe('createModule', () => {
     fakeResponseJson: fakeEmptyTypes,
     throwCloudError: false,
   });
-  testHttpService.retryPromise = (promise) => promise;
   const generator = new SchemaGenerator(new DeliveryClient({
     httpService: testHttpService,
     projectId: 'testProjectId',
