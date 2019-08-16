@@ -5,21 +5,22 @@ import * as yargs from 'yargs';
 import { SchemaGenerator } from './schema-generator';
 
 const argv = yargs.argv;
-const projectId: string = argv.projectId;
-const secureAccessKey: string = argv.secureAccessKey;
-const outputFile: string = argv.outputFile;
-const createModule: boolean = argv.createModule;
+const projectId: string = argv.projectId as string;
+const secureAccessKey: string = argv.secureAccessKey as string;
+const outputFile: string = argv.outputFile as string;
+const createModule: boolean = argv.createModule as boolean;
 
 if (!projectId) {
   throw Error('Please provide project id using \'projectId\' argument');
 }
 
 const deliveryClient = new DeliveryClient({
-  projectId,
-  secureMode: {
-    isEnabledGlobally: secureAccessKey ? true : false,
-    secureApiKey: secureAccessKey,
+  globalQueryConfig: {
+    useSecuredMode: secureAccessKey ? true : false,
   },
+  projectId,
+  secureApiKey: secureAccessKey,
+
 });
 
 const generator = new SchemaGenerator(deliveryClient);
