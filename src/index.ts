@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import * as fs from 'fs';
-import { DeliveryClient } from 'kentico-cloud-delivery';
+import { DeliveryClient } from '@kentico/kontent-delivery';
 import * as yargs from 'yargs';
 import * as config from '../config.json';
 import { SchemaGenerator } from './schema-generator';

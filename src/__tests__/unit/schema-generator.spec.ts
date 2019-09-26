@@ -1,6 +1,6 @@
+import { TestHttpService  } from '@kentico/kontent-core';
+import { DeliveryClient } from '@kentico/kontent-delivery';
 import * as fs from 'fs';
-import { TestHttpService  } from 'kentico-cloud-core';
-import { DeliveryClient } from 'kentico-cloud-delivery';
 import { SchemaGenerator } from '../../schema-generator';
 import * as fakeEmptyTypes from '../data/fakeEmptyTypes.json';
 import * as fakeTypesComplex from '../data/fakeTypesComplex.json';
@@ -16,7 +16,7 @@ describe('Constructor ', () => {
     const generator = new SchemaGenerator(new DeliveryClient({
       httpService: new TestHttpService({
         fakeResponseJson: fakeTypesComplex,
-        throwCloudError: false,
+        throwError: false,
       }),
       projectId: 'testProjectId',
     }));
@@ -28,7 +28,7 @@ describe('getSchema', () => {
   it('return correct fields for no types', async () => {
     const testHttpService = new TestHttpService({
       fakeResponseJson: fakeEmptyTypes,
-      throwCloudError: false,
+      throwError: false,
     });
     const generator = new SchemaGenerator(new DeliveryClient({
       httpService: testHttpService,
@@ -44,7 +44,7 @@ describe('getSchema', () => {
   it('return correct schema', async () => {
     const testHttpService = new TestHttpService({
       fakeResponseJson: fakeTypesComplex,
-      throwCloudError: false,
+      throwError: false,
     });
     const generator = new SchemaGenerator(new DeliveryClient({
       httpService: testHttpService,
@@ -60,7 +60,7 @@ describe('createModule', () => {
   const fakeEmptyTypesOutput = fs.readFileSync('./src/__tests__/data/fakeEmptyTypes.output.gql', 'utf8');
   const testHttpService = new TestHttpService({
     fakeResponseJson: fakeEmptyTypes,
-    throwCloudError: false,
+    throwError: false,
   });
   const generator = new SchemaGenerator(new DeliveryClient({
     httpService: testHttpService,

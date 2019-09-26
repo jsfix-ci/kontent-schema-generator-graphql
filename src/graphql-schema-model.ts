@@ -1,4 +1,4 @@
-import { ElementType } from 'kentico-cloud-delivery';
+import { ElementType } from '@kentico/kontent-delivery';
 
 export class GraphQLSchemaModel {
 

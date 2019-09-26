@@ -1,16 +1,17 @@
-# Kentico GraphQL schema generator
-[![Build Status](https://api.travis-ci.org/Kentico/kentico-cloud-graphql-schema-generator.svg?branch=master)](https://travis-ci.org/Kentico/kentico-cloud-graphql-schema-generator)
-[![npm version](https://badge.fury.io/js/kentico-cloud-graphql-schema-generator.svg)](https://www.npmjs.com/package/kentico-cloud-graphql-schema-generator)
-[![npm](https://img.shields.io/npm/dt/kentico-cloud-graphql-schema-generator.svg)](https://www.npmjs.com/package/kentico-cloud-graphql-schema-generator)
-[![Maintainability](https://api.codeclimate.com/v1/badges/0f6d187a729e061ab12f/maintainability)](https://codeclimate.com/github/Kentico/kentico-cloud-graphql-schema-generator/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/0f6d187a729e061ab12f/test_coverage)](https://codeclimate.com/github/Kentico/kentico-cloud-graphql-schema-generator/test_coverage)
-[![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-cloud)
+# Kentico Kontent GraphQL schema generator
+
+[![Build Status](https://api.travis-ci.org/Kentico/kontent-schema-generator-graphql.svg?branch=master)](https://travis-ci.org/Kentico/kontent-schema-generator-graphql)
+[![npm version](https://badge.fury.io/js/@kentico/kontent-schema-generator-graphql.svg)](https://www.npmjs.com/package/@kentico/kontent-schema-generator-graphql)
+[![npm](https://img.shields.io/npm/dt/kentico-cloud-graphql-schema-generator.svg)](https://www.npmjs.com/package/@kentico/kontent-schema-generator-graphql)
+[![Maintainability](https://api.codeclimate.com/v1/badges/0f6d187a729e061ab12f/maintainability)](https://codeclimate.com/github/Kentico/kontent-schema-generator-graphql/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/0f6d187a729e061ab12f/test_coverage)](https://codeclimate.com/github/Kentico/kontent-schema-generator-graphql/test_coverage)
+[![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-kontent)
 
 [GraphQL schema](https://graphql.org/learn/schema/) generator used to generate schema based on specified project.
 
-This schema could be used when creating [GraphQL](https://graphql.org) endpoint from [Kentico Cloud Delivery API REST endpoint](https://developer.kenticocloud.com/reference#delivery-api).
+This schema could be used when creating [GraphQL](https://graphql.org) endpoint from [Kentico Kontent Delivery API REST endpoint](https://developer.kenticocloud.com/reference#delivery-api).
 
-This schema is primarily meant to be used in combination with the [Official JavaScript SDK](https://github.com/Kentico/kentico-cloud-js/tree/master/packages/delivery) on the top of the Kentico Cloud REST API. If you are using REST API directly, you won't get all elements' properties set, because some of them are set by the JS SDK.
+This schema is primarily meant to be used in combination with the [Official JavaScript SDK](https://github.com/Kentico/kentico-cloud-js/tree/master/packages/delivery) on the top of the Kentico Kontent REST API. If you are using REST API directly, you won't get all elements' properties set, because some of them are set by the JS SDK.
 
 **Showcase** could be see on [apollo express boilerplate](https://github.com/Kentico/cloud-boilerplate-express-apollo).
 
@@ -38,8 +39,8 @@ Generate file with definition exported as a constant fo file `config.js`
 
 ### Configuration
 
-* `projectId` - represents the Kentico Cloud Project Id from which schema will be generated
-* `secureAccessKey` - Secure access key required to authenticate requests with enabled secure access in Kentico Cloud project
+* `projectId` - represents the Kentico Kontent Project Id from which schema will be generated
+* `secureAccessKey` - Secure access key required to authenticate requests with enabled secure access in Kentico Kontent project
 * `outputFile` - specifies output file name (possible with the path), if not specified - output is written to standard output
 * `createModule` - output is defined as a constant and exported as a module (see [Example Output](#example-output))
 

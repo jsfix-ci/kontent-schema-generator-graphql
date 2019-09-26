@@ -1,4 +1,4 @@
-import { ContentType, DeliveryClient, GenericElement} from 'kentico-cloud-delivery';
+import { ContentType, DeliveryClient, GenericElement} from '@kentico/kontent-delivery';
 import { GraphQLSchemaModel } from './graphql-schema-model';
 
 export class SchemaGenerator {

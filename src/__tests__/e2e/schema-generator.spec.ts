@@ -1,4 +1,4 @@
-import { DeliveryClient } from 'kentico-cloud-delivery';
+import { DeliveryClient } from '@kentico/kontent-delivery';
 import { SchemaGenerator } from '../../schema-generator';
 
 describe('getSchema', () => {
