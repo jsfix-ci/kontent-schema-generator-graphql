@@ -1,6 +1,6 @@
 # Kentico Kontent GraphQL schema generator
 
-[![Build Status](https://api.travis-ci.org/Kentico/kontent-schema-generator-graphql.svg?branch=master)](https://travis-ci.org/Kentico/kontent-schema-generator-graphql)
+[![Build Status](https://api.travis-ci.com/Kentico/kontent-schema-generator-graphql.svg?branch=master)](https://travis-ci.com/Kentico/kontent-schema-generator-graphql)
 [![npm version](https://badge.fury.io/js/@kentico/kontent-schema-generator-graphql.svg)](https://www.npmjs.com/package/@kentico/kontent-schema-generator-graphql)
 [![npm](https://img.shields.io/npm/dt/kontent-schema-generator-graphql.svg)](https://www.npmjs.com/package/@kentico/kontent-schema-generator-graphql)
 [![Maintainability](https://api.codeclimate.com/v1/badges/0f6d187a729e061ab12f/maintainability)](https://codeclimate.com/github/Kentico/kontent-schema-generator-graphql/maintainability)
