@@ -1,10 +1,10 @@
 {
-  "name": "kentico-cloud-graphql-schema-generator",
-  "version": "1.0.2",
+  "name": "@kentico/kontent-schema-generator-graphql",
+  "version": "2.0.0-rebranding.3",
   "description": "GraphQL schema generator used to generate schema based on specified project.",
   "main": "_commonjs/index.js",
   "bin": {
-    "kc-generate-gql-schema": "./_commonjs/index.js"
+    "kontent-generate-gql-schema": "./_commonjs/src/index.js"
   },
   "custom": {
     "buildFolder": "_commonjs"
@@ -14,31 +14,32 @@
     "test:coverage": "jest --coverage",
     "coverage": "jest --config jest.coverage.config.js ",
     "watch": "tsc -w",
-    "build": "tsc"
+    "build": "tsc",
+    "run:sample": "ts-node ./src/index.ts --projectId 975bf280-fd91-488c-994c-2f04416e5ee3 --createModule"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Kentico/kentico-cloud-graphql-schema-generator.git"
+    "url": "git+https://github.com/Kentico/kontent-schema-generator-graphql.git"
   },
   "keywords": [
     "graphql",
     "generator",
     "kentico",
-    "kentico-cloud",
+    "kentico-kontent",
     "headless",
     "cms"
   ],
   "author": "Ondřej Chrastina <ondrej.chrastina@kentico.com> (https://github.com/Simply007)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Kentico/kentico-cloud-graphql-schema-generator/issues"
+    "url": "https://github.com/Kentico/kontent-schema-generator-graphql/issues"
   },
-  "homepage": "https://github.com/Kentico/kentico-cloud-graphql-schema-generator#readme",
+  "homepage": "https://github.com/Kentico/kontent-schema-generator-graphql#readme",
   "dependencies": {
+    "@kentico/kontent-core": "^5.0.1",
+    "@kentico/kontent-delivery": "^8.1.0",
     "@types/yargs": "^12.0.1",
-    "kentico-cloud-core": "^1.3.2",
-    "kentico-cloud-delivery": "^5.2.1",
-    "rxjs": "^6.3.3",
+    "rxjs": "^6.5.2",
     "yargs": "^12.0.5"
   },
   "devDependencies": {

@@ -1,23 +1,30 @@
 #!/usr/bin/env node
+import { DeliveryClient } from '@kentico/kontent-delivery';
 import * as fs from 'fs';
-import { DeliveryClient } from 'kentico-cloud-delivery';
 import * as yargs from 'yargs';
+import * as config from '../config.json';
 import { SchemaGenerator } from './schema-generator';
 
 const argv = yargs.argv;
-const projectId: string = argv.projectId;
-const secureAccessKey: string = argv.secureAccessKey;
-const outputFile: string = argv.outputFile;
-const createModule: boolean = argv.createModule;
+const projectId: string = argv.projectId as string;
+const secureAccessKey: string = argv.secureAccessKey as string;
+const outputFile: string = argv.outputFile as string;
+const createModule: boolean = argv.createModule as boolean;
 
 if (!projectId) {
   throw Error('Please provide project id using \'projectId\' argument');
 }
 
 const deliveryClient = new DeliveryClient({
-  enableSecuredMode: secureAccessKey ? true : false,
+  globalQueryConfig: {
+    customHeaders: [
+      config.trackingHeader,
+    ],
+    useSecuredMode: secureAccessKey ? true : false,
+  },
   projectId,
-  securedApiKey: secureAccessKey,
+  secureApiKey: secureAccessKey,
+
 });
 
 const generator = new SchemaGenerator(deliveryClient);

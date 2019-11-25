@@ -148,6 +148,10 @@
         "product_name": {
           "type": "text",
           "name": "Product name"
+        },
+        "content": {
+          "type": "custom",
+          "name": "Content"
         }
       }
     },

@@ -4,6 +4,6 @@ describe('getFieldDefinitions ', () => {
   it('Return correct number of items', () => {
     const schemaModel = new GraphQLSchemaModel();
     const fieldSchemas = schemaModel.getFieldDefinitions();
-    expect(fieldSchemas.length).toEqual(14);
+    expect(fieldSchemas.length).toEqual(16);
   });
 });
