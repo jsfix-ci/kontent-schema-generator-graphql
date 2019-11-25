@@ -1,8 +1,7 @@
 # Kentico Kontent GraphQL schema generator
 
-[![Build Status](https://api.travis-ci.com/Kentico/kontent-schema-generator-graphql.svg?branch=master)](https://travis-ci.com/Kentico/kontent-schema-generator-graphql)
-[![npm version](https://badge.fury.io/js/@kentico/kontent-schema-generator-graphql.svg)](https://www.npmjs.com/package/@kentico/kontent-schema-generator-graphql)
-[![npm](https://img.shields.io/npm/dt/kontent-schema-generator-graphql.svg)](https://www.npmjs.com/package/@kentico/kontent-schema-generator-graphql)
+[![Build Status](https://api.travis-ci.com/Kentico/kontent-graphql-schema-generator.svg?branch=master)](https://travis-ci.com/Kentico/kontent-graphql-schema-generator)
+[![npm version](https://badge.fury.io/js/%40kentico%2Fkontent-schema-generator-graphql.svg)](https://badge.fury.io/js/%40kentico%2Fkontent-schema-generator-graphql)
 [![Maintainability](https://api.codeclimate.com/v1/badges/0f6d187a729e061ab12f/maintainability)](https://codeclimate.com/github/Kentico/kontent-schema-generator-graphql/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/0f6d187a729e061ab12f/test_coverage)](https://codeclimate.com/github/Kentico/kontent-schema-generator-graphql/test_coverage)
 [![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-kontent)
