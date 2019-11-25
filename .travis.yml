@@ -19,6 +19,6 @@ deploy:
  email: $NPM_EMAIL
  api_key: $NPM_API_KEY
  skip_cleanup: true
- tag: rebranding # uncomment for beta release
+ # tag: beta # uncomment for beta release
  on:
    tags: true
