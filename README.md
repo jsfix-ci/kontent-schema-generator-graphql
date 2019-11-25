@@ -9,7 +9,7 @@
 
 [GraphQL schema](https://graphql.org/learn/schema/) generator used to generate schema based on specified project.
 
-This schema could be used when creating [GraphQL](https://graphql.org) endpoint from [Kentico Kontent Delivery API REST endpoint](https://developer.kenticocloud.com/reference#delivery-api).
+This schema could be used when creating [GraphQL](https://graphql.org) endpoint from [Kentico Kontent Delivery API REST endpoint](https://docs.kontent.ai/reference/kentico-kontent-apis-overview#delivery-api).
 
 This schema is primarily meant to be used in combination with the [Official JavaScript SDK](https://github.com/Kentico/kentico-kontent-js/tree/master/packages/delivery) on the top of the Kentico Kontent REST API. If you are using REST API directly, you won't get all elements' properties set, because some of them are set by the JS SDK.
 
@@ -27,7 +27,7 @@ This schema is primarily meant to be used in combination with the [Official Java
 
 ### Generating schema with NPM script
 
-Provide a [project ID](https://developer.kenticocloud.com/v1/reference) of your project.
+Provide a [project ID](https://docs.kontent.ai/reference/delivery-api#operation/list-content-items) of your project.
 
 Write  type definition to the standard output
 
@@ -48,7 +48,7 @@ Generate file with definition exported as a constant fo file `config.js`
 
 Version 1.X.X is compatible with npm package [`kentico-cloud-delivery`](https://www.npmjs.com/package/kentico-cloud-delivery) version 5.X.X.
 
-Version 2.X.X is compatible with npm package [`@kentico/kontent-delivery`](https://www.npmjs.com/package/@kentico/kontent-delivery) version 7.X.X.
+Version 2.X.X is compatible with npm package [`@kentico/kontent-delivery`](https://www.npmjs.com/package/@kentico/kontent-delivery) version 8.X.X.
 
 ## Development
 
@@ -309,4 +309,4 @@ module.exports = {
 
 </details>
 
-![Analytics](https://kentico-ga-beacon.azurewebsites.net/api/UA-69014260-4/Kentico/kentico-cloud-graphql-schema-generator?pixel)
+![Analytics](https://kentico-ga-beacon.azurewebsites.net/api/UA-69014260-4/Kentico/kontent-schema-generator-graphql?pixel)
