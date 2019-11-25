@@ -1,6 +1,6 @@
 {
   "name": "@kentico/kontent-schema-generator-graphql",
-  "version": "2.0.0-rebranding.2",
+  "version": "2.0.0-rebranding.3",
   "description": "GraphQL schema generator used to generate schema based on specified project.",
   "main": "_commonjs/index.js",
   "bin": {
@@ -36,8 +36,8 @@
   },
   "homepage": "https://github.com/Kentico/kontent-schema-generator-graphql#readme",
   "dependencies": {
-    "@kentico/kontent-core": "^2.0.0",
-    "@kentico/kontent-delivery": "^7.0.1",
+    "@kentico/kontent-core": "^5.0.1",
+    "@kentico/kontent-delivery": "^8.1.0",
     "@types/yargs": "^12.0.1",
     "rxjs": "^6.5.2",
     "yargs": "^12.0.5"
