@@ -202,7 +202,7 @@ export class GraphQLSchemaModel {
   type: String!
   name: String!
   value: [ContentItem]
-  linkedItemCodenames: [String]
+  itemCodenames: [String]
 }`,
     ],
     [
