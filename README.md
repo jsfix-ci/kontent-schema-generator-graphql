@@ -163,6 +163,12 @@ type RichTextElement {
   images: [RichTextImage]
   resolvedHtml: String
 }
+type LinkedItemsElement {
+  type: String!
+  name: String!
+  value: [ContentItem]
+  linkedItemCodenames: [String]
+}
 type CustomElement {
   type: String!
   name: String!
@@ -182,7 +188,7 @@ type AboutUsContentType implements ContentItem {
   metadata__twitter_title: TextElement
   metadata__twitter_description: TextElement
   metadata__og_image: AssetElement
-  facts: [ContentItem]
+  facts: LinkedItemsElement
 }
 
 ```
@@ -279,6 +285,12 @@ type RichTextElement {
   images: [RichTextImage]
   resolvedHtml: String
 }
+type LinkedItemsElement {
+  type: String!
+  name: String!
+  value: [ContentItem]
+  linkedItemCodenames: [String]
+}
 type CustomElement {
   type: String!
   name: String!
@@ -298,7 +310,7 @@ type AboutUsContentType implements ContentItem {
   metadata__twitter_title: TextElement
   metadata__twitter_description: TextElement
   metadata__og_image: AssetElement
-  facts: [ContentItem]
+  facts: LinkedItemsElement
 }`;
 
 module.exports = {
