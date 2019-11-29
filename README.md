@@ -198,7 +198,7 @@ type AboutUsContentType implements ContentItem {
 <details>
 <summary>With module encapsulation</summary>
 
-```plain
+```js
 const TYPE_DEFINITION = `type SystemInfo {
   id: String!
   name: String!
