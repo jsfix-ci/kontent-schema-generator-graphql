@@ -87,6 +87,12 @@ type RichTextElement {
   images: [RichTextImage]
   resolvedHtml: String
 }
+type LinkedItemsElement {
+  type: String!
+  name: String!
+  value: [ContentItem]
+  linkedItemCodenames: [String]
+}
 type CustomElement {
   type: String!
   name: String!
@@ -107,7 +113,7 @@ type AboutUsContentType implements ContentItem {
   metadata__twitter_title: TextElement
   metadata__twitter_description: TextElement
   metadata__og_image: AssetElement
-  facts: [ContentItem]
+  facts: LinkedItemsElement
 }
 
 type AccessoryContentType implements ContentItem {
@@ -154,7 +160,7 @@ type ArticleContentType implements ContentItem {
   metadata__twitter_description: TextElement
   meta_description: TextElement
   metadata__og_image: AssetElement
-  related_articles: [ContentItem]
+  related_articles: LinkedItemsElement
   url_pattern: UrlSlugElement
 }
 
@@ -265,12 +271,12 @@ type HomeContentType implements ContentItem {
   metadata__og_description: TextElement
   metadata__meta_title: TextElement
   metadata__og_title: TextElement
-  articles: [ContentItem]
-  hero_unit: [ContentItem]
+  articles: LinkedItemsElement
+  hero_unit: LinkedItemsElement
   metadata__meta_description: TextElement
   metadata__twitter_site: TextElement
-  our_story: [ContentItem]
-  cafes: [ContentItem]
+  our_story: LinkedItemsElement
+  cafes: LinkedItemsElement
   metadata__twitter_image: AssetElement
   metadata__twitter_creator: TextElement
   metadata__twitter_title: TextElement

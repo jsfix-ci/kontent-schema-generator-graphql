@@ -14,8 +14,7 @@ export class GraphQLSchemaModel {
   public static assetElementTypeName: string = 'AssetElement';
   public static richTextElementTypeName: string = 'RichTextElement';
   public static customElementTypeName: string = 'CustomElement';
-
-  public static linkedItemsElement: string = '[ContentItem]';
+  public static linkedItemsElement: string = 'LinkedItemsElement';
 
   public static elementTypeMapping: Map<string, string> = new Map([
     [
@@ -195,6 +194,15 @@ export class GraphQLSchemaModel {
   links: [Link]
   images: [RichTextImage]
   resolvedHtml: String
+}`,
+    ],
+    [
+      ElementType.ModularContent.toString(),
+      `type ${GraphQLSchemaModel.linkedItemsElement} {
+  type: String!
+  name: String!
+  value: [ContentItem]
+  linkedItemCodenames: [String]
 }`,
     ],
     [
