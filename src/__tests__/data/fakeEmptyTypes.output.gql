@@ -84,6 +84,12 @@ type RichTextElement {
   images: [RichTextImage]
   resolvedHtml: String
 }
+type LinkedItemsElement {
+  type: String!
+  name: String!
+  value: [ContentItem]
+  linkedItemCodenames: [String]
+}
 type CustomElement {
   type: String!
   name: String!
