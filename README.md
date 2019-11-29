@@ -167,7 +167,7 @@ type LinkedItemsElement {
   type: String!
   name: String!
   value: [ContentItem]
-  linkedItemCodenames: [String]
+  itemCodenames: [String]
 }
 type CustomElement {
   type: String!
@@ -289,7 +289,7 @@ type LinkedItemsElement {
   type: String!
   name: String!
   value: [ContentItem]
-  linkedItemCodenames: [String]
+  itemCodenames: [String]
 }
 type CustomElement {
   type: String!
