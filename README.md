@@ -6,13 +6,13 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/0f6d187a729e061ab12f/test_coverage)](https://codeclimate.com/github/Kentico/kontent-schema-generator-graphql/test_coverage)
 [![Stack Overflow](https://img.shields.io/badge/Stack%20Overflow-ASK%20NOW-FE7A16.svg?logo=stackoverflow&logoColor=white)](https://stackoverflow.com/tags/kentico-kontent)
 
-[GraphQL schema](https://graphql.org/learn/schema/) generator used to generate schema based on specified project.
+[GraphQL schema](https://graphql.org/learn/schema/) generator is used to generate schema based on specified project.
 
 This schema could be used when creating [GraphQL](https://graphql.org) endpoint from [Kentico Kontent Delivery API REST endpoint](https://docs.kontent.ai/reference/kentico-kontent-apis-overview#delivery-api).
 
 This schema is primarily meant to be used in combination with the [Official JavaScript SDK](https://github.com/Kentico/kentico-kontent-js/tree/master/packages/delivery) on the top of the Kentico Kontent REST API. If you are using REST API directly, you won't get all elements' properties set, because some of them are set by the JS SDK.
 
-**Showcase** could be see on [Apollo Express boilerplate](https://github.com/Kentico/kontent-boilerplate-express-apollo).
+**Showcase** could be seen on [Apollo Express boilerplate](https://github.com/Kentico/kontent-boilerplate-express-apollo).
 
 ## Get started
 
