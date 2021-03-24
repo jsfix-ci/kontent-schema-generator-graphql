@@ -13,7 +13,7 @@ script:
 - npm run build
 - npm run coverage
 after_script:
-- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT 
 deploy:
  provider: npm
  email: $NPM_EMAIL
