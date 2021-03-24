@@ -14,16 +14,13 @@ on:
   workflow_dispatch:
 
 jobs:
-  check:
+  test:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [14.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-
-    env: 
-      CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
 
     steps:
       - uses: actions/checkout@v2
@@ -32,10 +29,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install
-      - run: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-      - run: chmod +x ./cc-test-reporter
-      - run: ./cc-test-reporter before-build
       - run: npm run build
-      - run: npm run coverage
-      - run: echo "TRAVIS_TEST_RESULT is $TRAVIS_TEST_RESULT"
-      - run: ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+      - uses: paambaati/codeclimate-action@v2.2.4
+          env:
+            CC_TEST_REPORTER_ID: 5365a5edc7e7c868a9b47f5372c0f7657a7040b01f23e6bd9d70bdcd159fb976
+          with:
+            coverageCommand: npm run coverage
