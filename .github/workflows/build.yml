@@ -37,4 +37,5 @@ jobs:
       - run: ./cc-test-reporter before-build
       - run: npm run build
       - run: npm run coverage
+      - run: echo "TRAVIS_TEST_RESULT is $TRAVIS_TEST_RESULT"
       - run: ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
