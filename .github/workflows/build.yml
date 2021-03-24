@@ -14,13 +14,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  check:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
         node-version: [14.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    env: 
 
     steps:
       - uses: actions/checkout@v2
@@ -30,8 +32,4 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm install
       - run: npm run build
-      - uses: paambaati/codeclimate-action@v2.2.4
-          env:
-            CC_TEST_REPORTER_ID: 5365a5edc7e7c868a9b47f5372c0f7657a7040b01f23e6bd9d70bdcd159fb976
-          with:
-            coverageCommand: npm run coverage
+      - run: npm run coverage
