@@ -9,7 +9,7 @@
 
 [GraphQL schema](https://graphql.org/learn/schema/) generator is used to generate schema based on specified project.
 
-This schema could be used when creating [GraphQL](https://graphql.org) endpoint from [Kentico Kontent Delivery API REST endpoint](https://docs.kontent.ai/reference/kentico-kontent-apis-overview#delivery-api).
+This schema could be used when creating [GraphQL](https://graphql.org) endpoint from [Kentico Kontent Delivery REST API endpoints](https://kontent.ai/learn/reference/delivery-api).
 
 This schema is primarily meant to be used in combination with the [Official JavaScript SDK](https://github.com/Kentico/kentico-kontent-js/tree/master/packages/delivery) on the top of the Kentico Kontent REST API. If you are using REST API directly, you won't get all elements' properties set, because some of them are set by the JS SDK.
 
@@ -27,7 +27,7 @@ This schema is primarily meant to be used in combination with the [Official Java
 
 ### Generating schema with NPM script
 
-Provide a [project ID](https://docs.kontent.ai/reference/delivery-api#operation/list-content-items) of your project.
+Provide a [project ID](https://kontent.ai/learn/tutorials/develop-apps/get-content/get-content-items#a-1-find-your-project-id) of your project.
 
 Write  type definition to the standard output
 
